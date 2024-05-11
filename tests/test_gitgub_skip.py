@@ -4,7 +4,7 @@ from selene import browser
 from qa_guru_hw_15_pytest.model.pages.general_page import general_page
 
 
-def test_desktop_signin(desktop_resolution):
+def test_desktop_signin(resolution):
     if browser.config.window_width < 1000:
         pytest.skip('Mobile resolution')
     else:
@@ -13,7 +13,7 @@ def test_desktop_signin(desktop_resolution):
         general_page.should_url_login('https://github.com/login')
 
 
-def test_mobile_signin(mobile_resolution):
+def test_mobile_signin(resolution):
     if browser.config.window_width > 1000:
         pytest.skip('Desktop resolution')
     else:

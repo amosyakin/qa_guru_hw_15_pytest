@@ -13,7 +13,7 @@ def desktop_resolution(request):
     browser.quit()
 
 
-@pytest.fixture(params=[(800, 600), (340, 280)])
+@pytest.fixture(params=[(800, 600), (960, 540)])
 def mobile_resolution(request):
     width, height = request.param
     browser.config.window_width = width
